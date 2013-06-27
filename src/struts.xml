@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+<constant name="struts.enable.DynamicMethodInvocation" value="false" />  
+    <constant name="struts.devMode" value="true" />  
+
+<package name="default"  namespace="/" extends="struts-default">  
+    <default-action-ref name="index"/>  
+        <action name="index">  
+       <result>/login.jsp</result>       
+    </action>  
+</package>
+<package name="managerForm" namespace="/" extends="struts-default" >
+
+	<action name="manager" class="com.action.Manager">
+		<result name="managerQuery">/manager.jsp </result>
+		<result name="managerLoginok">/main.jsp</result>
+		<result name="managerAdd">/manager_ok.jsp?para=1</result>
+		<result name="managerQueryModify">/manager_Modify.jsp</result>
+		<result name="managerModify">/manager_ok.jsp?para=2</result>
+		<result name="pwdQueryModify">/pwd_Modify.jsp</result>
+		<result name="pwdModify">/pwd_ok.jsp</result>
+		<result name="managerDel">/manager_ok.jsp?para=3</result>
+		<result name="modifypwd">/main.jsp</result>
+		<result name="error">/error.jsp</result>
+	</action>
+	
+	<action name="library" class="com.action.Library" >
+      <result name="error" >/error.jsp</result>
+      <result name="librarymodify" >/library_ok.jsp?para=2</result>
+      <result name="librarymodifyQuery" >/library_modify.jsp</result>
+    </action>
+    <action name="parameter" class="com.action.Parameter" >
+      <result name="error">/error.jsp</result>
+      <result name="parametermodify" >/parameter_ok.jsp?para=2</result>
+      <result name="parametermodifyQuery" >/parameter_modify.jsp</result>
+    </action>
+    <action name="readerType" class="com.action.ReaderType" >
+      <result name="readerTypeQuery" >/readerType.jsp</result>
+      <result name="readerTypeAdd" >/readerType_ok.jsp?para=1</result>
+      <result name="readerTypeQueryModify" >/readerType_Modify.jsp</result>
+      <result name="readerTypeModify" >/readerType_ok.jsp?para=2</result>
+      <result name="readerTypeDel" >/readerType_ok.jsp?para=3</result>
+      <result name="error" >/error.jsp</result>
+    </action>
+    <action name="bookType" class="com.action.BookType" >
+      <result name="bookTypeQuery" >/bookType.jsp</result>
+      <result name="bookTypeAdd" >/bookType_ok.jsp?para=1</result>
+      <result name="bookTypeQueryModify" >/bookType_Modify.jsp</result>
+      <result name="bookTypeModify" >/bookType_ok.jsp?para=2</result>
+      <result name="bookTypeDel" >/bookType_ok.jsp?para=3</result>
+      <result name="error" >/error.jsp</result>
+    </action>
+    <action name="reader" class="com.action.Reader" >
+      <result name="readerQuery" >/reader.jsp</result>
+      <result name="readerAdd" >/reader_ok.jsp?para=1</result>
+      <result name="readerQueryModify" >/reader_Modify.jsp</result>
+      <result name="readerDeatil" >/reader_detail.jsp</result>
+      <result name="readerModify" >/reader_ok.jsp?para=2</result>
+      <result name="readerDel" >/reader_ok.jsp?para=3</result>
+      <result name="error" >/error.jsp</result>
+    </action>
+    <action name="book" class="com.action.Book" >
+      <result name="bookQuery" >/book.jsp</result>
+      <result name="bookifQuery" >/bookQuery.jsp</result>
+      <result name="bookAdd" >/book_ok.jsp?para=1</result>
+      <result name="bookQueryModify" >/book_Modify.jsp</result>
+      <result name="bookDeatil" >/book_detail.jsp</result>
+      <result name="bookModify" >/book_ok.jsp?para=2</result>
+      <result name="bookDel" >/book_ok.jsp?para=3</result>
+      <result name="error" >/error.jsp</result>
+    </action>
+    <action name="publishing" class="com.action.Publishing" />
+    
+    <action name="borrow" class="com.action.Borrow" >
+      <result name="bookBorrowSort" >/bookBorrowSort.jsp</result>
+      <result name="readerBorrowSort" >/readerBorrowSort.jsp</result>
+      <result name="bookborrow" >/bookBorrow.jsp</result>
+      <result name="borrowQuery" >/borrowQuery.jsp</result>
+      <result name="bookborrowok" >/bookBorrow_ok.jsp</result>
+      <result name="bookrenew" >/bookRenew.jsp</result>
+      <result name="bookrenewok" >/bookRenew_ok.jsp</result>
+      <result name="bookback" >/bookBack.jsp</result>
+      <result name="bookbackok" >/bookBack_ok.jsp</result>
+      <result name="Bremind" >/bremind.jsp</result>
+      <result name="error" >/error.jsp</result>
+    </action>
+	
+    </package>
+    
+
+</struts>    
